@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phạm Quỳnh Trang-Phạm Thị Như Ý</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <nav class="sidebar">
+        <div class="sidebar-header">
+          <img class="logo hover-up" src="./New folder/logo.png" alt="Logo" />
+          <h1 class="hover-up">Ocean Wave</h1>
+        </div>
+
+        <ul class="nav-links">
+          <li class="search-wrapper hover-up">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Tìm tên truyện..."
+            />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </li>
+
+          <li class="menu-dropdown">
+            <div class="menu-trigger hover-up">
+              <button class="hover-up">Thể loại</button>
+            </div>
+            <ul class="submenu" id="genreMenu">
+              <li><a href="#" class="filter-genre">Hành động</a></li>
+              <li><a href="#" class="filter-genre">Phiêu lưu</a></li>
+              <li><a href="#" class="filter-genre">Tình cảm</a></li>
+              <li><a href="#" class="filter-genre">Fantasy</a></li>
+              <li><a href="#" class="filter-genre">Bí ẩn</a></li>
+              <li><a href="#" class="filter-genre">Tâm lý</a></li>
+              <li><a href="#" class="filter-genre">Bi kịch</a></li>
+              <li><a href="#" class="filter-genre">Đời thường</a></li>
+              <li><a href="#" class="filter-genre">Học đường</a></li>
+            </ul>
+          </li>
+
+          <li id="authSection">
+            <button class="hover-up" id="btnOpenAuth">Đăng nhập</button>
+          </li>
+          <li class="hover-up">
+            <a href="thanhvien.html" style="text-decoration: none">
+              <button><i class="fa-solid fa-users"></i>Về chúng tôi</button>
+            </a>
+          </li>
+          <div class="sidebar-header">
+            <img
+              class="logo hover-up"
+              src="./New folder/logo-truong.png"
+              alt="Logo"
+            />
+          </div>
+        </ul>
+      </nav>
+
+      <main class="content">
+        <div class="container">
+          <i>
+            <h2 id="welcomeText">Chào mừng đến với Ocean Wave!!</h2>
+            <div class="new-comics-section">
+              <h3 class="section-title">
+                <i class="fa-solid fa-fire"></i> Truyện Mới Cập Nhật
+              </h3>
+              <div class="slider-container">
+                <button class="slider-btn prev" id="prevBtn">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="slider-track" id="sliderTrack">
+                  <a href="thongtin1.html" class="slider-item">
+                    <img src="./New folder/truyenmoi1.jpg" alt="New 1" />
+                    <div class="slider-info">
+                      Omniscient Reader's Viewpoint.
+                    </div>
+                  </a>
+                  <a href="thongtin23.html" class="slider-item">
+                    <img src="./New folder/truyenmoi2.jpg" alt="New 23" />
+                    <div class="slider-info">Frieren</div>
+                  </a>
+                  <a href="thongtin16.html" class="slider-item">
+                    <img src="./New folder/truyenmoi3.jpg" alt="New 16" />
+                    <div class="slider-info">Dungeon Meshi</div>
+                  </a>
+                  <a href="thongtin21.html" class="slider-item">
+                    <img src="./New folder/truyenmoi4.jpg" alt="New 21" />
+                    <div class="slider-info">Witch Hat</div>
+                  </a>
+                  <a href="thongtin5.html" class="slider-item">
+                    <img src="./New folder/truyenmoi5.jpg" alt="New 5" />
+                    <div class="slider-info">Seraph of the End</div>
+                  </a>
+                </div>
+
+                <button class="slider-btn next" id="nextBtn">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+            <h2>Tất cả truyện</h2>
+            <div class="image-grid" id="mainGrid">
+              <a
+                href="thongtin1.html"
+                class="image-item hover-up"
+                data-genre="Hành động, Phiêu lưu, Kỳ ảo"
+              >
+                <img src="./anhnen1.jpg" alt="Artwork 1" />
+                <div class="image-info">
+                  <span class="comic-title">Omniscient Reader's Viewpoint</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin2.html"
+                class="image-item hover-up"
+                data-genre="Phiêu lưu, Kỳ ảo"
+              >
+                <img src="./anhnen2.jpg" alt="Artwork 2" />
+                <div class="image-info">
+                  <span class="comic-title">S classes that i raised</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin3.html"
+                class="image-item hover-up"
+                data-genre="Hành động, Phiêu lưu"
+              >
+                <img src="./anhnen3.jpg" alt="Artwork 3" />
+                <div class="image-info">
+                  <span class="comic-title">Lout of Count’s Family</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin4.html"
+                class="image-item hover-up"
+                data-genre="Hành động, Phiêu lưu"
+              >
+                <img src="./anhnen4.jpg" alt="Artwork 4" />
+                <div class="image-info">
+                  <span class="comic-title">Extraordinary Civil Servant</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin5.html"
+                class="image-item hover-up"
+                data-genre="Hành động, Phiêu lưu, Kỳ ảo"
+              >
+                <img src="./anhnen5.jpg" alt="Artwork 5" />
+                <div class="image-info">
+                  <span class="comic-title">Seraph of the end</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin6.html"
+                class="image-item hover-up"
+                data-genre="Tâm lý"
+              >
+                <img src="./anhnen6.jpg" alt="Artwork 6" />
+                <div class="image-info">
+                  <span class="comic-title">Link click</span>
+                </div>
+              </a>
+              <a
+                href="thongtin7.html"
+                class="image-item hover-up"
+                data-genre="Học đường, Đời thường,Tình cảm"
+              >
+                <img src="./anhnen7.jpg" alt="Artwork 7" />
+                <div class="image-info">
+                  <span class="comic-title">Classmate</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin8.html"
+                class="image-item hover-up"
+                data-genre="Fantasy, Tình cảm"
+              >
+                <img src="./anhnen8.jpg" alt="Artwork 8" />
+                <div class="image-info">
+                  <span class="comic-title">Marriage to the Wolf</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin9.html"
+                class="image-item hover-up"
+                data-genre="Tâm lý"
+              >
+                <img src="./anhnen9.jpg" alt="Artwork 9" />
+                <div class="image-info">
+                  <span class="comic-title">The Summer Hikaru Died</span>
+                </div>
+              </a>
+              <a
+                href="thongtin10.html"
+                class="image-item hover-up"
+                data-genre="Học đường, Tâm lý, Tình cảm"
+              >
+                <img src="./anhnen10.jpg" alt="Artwork 10" />
+                <div class="image-info">
+                  <span class="comic-title">Given</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin11.html"
+                class="image-item hover-up"
+                data-genre="Học đường"
+              >
+                <img src="./anhnen11.jpg" alt="Artwork 11" />
+                <div class="image-info">
+                  <span class="comic-title">Blue Period</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin12.html"
+                class="image-item hover-up"
+                data-genre="Tâm lý, Bi kịch"
+              >
+                <img src="./anhnen12.jpg" alt="Artwork 12" />
+                <div class="image-info">
+                  <span class="comic-title">Look Back</span>
+                </div>
+              </a>
+              <a
+                href="thongtin13.html"
+                class="image-item hover-up"
+                data-genre="Đời thường, Học đường"
+              >
+                <img src="./anhnen13.jpg" alt="Artwork 13" />
+                <div class="image-info">
+                  <span class="comic-title"
+                    >The Guy She Was Interested in Wasn't a Guy at All</span
+                  >
+                </div>
+              </a>
+
+              <a
+                href="thongtin14.html"
+                class="image-item hover-up"
+                data-genre="Phiêu lưu, Fantasy, Bí ẩn, Bi kịch"
+              >
+                <img src="./anhnen14.jpg" alt="Artwork 14" />
+                <div class="image-info">
+                  <span class="comic-title">Made in Abyss</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin15.html"
+                class="image-item hover-up"
+                data-genre="Fantasy, Phiêu lưu, Tâm lý"
+              >
+                <img src="./anhnen15.jpg" alt="Artwork 15" />
+                <div class="image-info">
+                  <span class="comic-title">To Your Eternity</span>
+                </div>
+              </a>
+              <a
+                href="thongtin16.html"
+                class="image-item hover-up"
+                data-genre="Fantasy, Phiêu lưu"
+              >
+                <img src="./anhnen16.jpg" alt="Artwork 16" />
+                <div class="image-info">
+                  <span class="comic-title">Delicious in Dungeon</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin17.html"
+                class="image-item hover-up"
+                data-genre="Fantasy, Tâm lý, Bi kịch"
+              >
+                <img src="./anhnen17.jpg" alt="Artwork 17" />
+                <div class="image-info">
+                  <span class="comic-title">Madoka Magical</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin18.html"
+                class="image-item hover-up"
+                data-genre="Fantasy, Bí ẩn"
+              >
+                <img src="./anhnen18.jpg" alt="Artwork 18" />
+                <div class="image-info">
+                  <span class="comic-title">Black Butter</span>
+                </div>
+              </a>
+              <a
+                href="thongtin19.html"
+                class="image-item hover-up"
+                data-genre="Hành động, Tâm lý"
+              >
+                <img src="./anhnen19.jpg" alt="Artwork 19" />
+                <div class="image-info">
+                  <span class="comic-title">Bungo Stray Dogs</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin20.html"
+                class="image-item hover-up"
+                data-genre="Bí ẩn, Đời thường"
+              >
+                <img src="./anhnen20.jpg" alt="Artwork 20" />
+                <div class="image-info">
+                  <span class="comic-title">XXXHolic</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin21.html"
+                class="image-item hover-up"
+                data-genre="Fantasy"
+              >
+                <img src="./anhnen21.jpg" alt="Artwork 21" />
+                <div class="image-info">
+                  <span class="comic-title">Witch Hat Atelier</span>
+                </div>
+              </a>
+              <a
+                href="thongtin22.html"
+                class="image-item hover-up"
+                data-genre="Tâm lý"
+              >
+                <img src="./anhnen22.jpg" alt="Artwork 22" />
+                <div class="image-info">
+                  <span class="comic-title">Evangelion</span>
+                </div>
+              </a>
+
+              <a
+                href="thongtin23.html"
+                class="image-item hover-up"
+                data-genre="Đời thường, Tâm lý, Fantasy"
+              >
+                <img src="./anhnen23.jpg" alt="Artwork 23" />
+                <div class="image-info">
+                  <span class="comic-title">Frieren</span>
+                </div>
+              </a>
+              <a
+                href="thongtin24.html"
+                class="image-item hover-up"
+                data-genre="Đời thường, Tình cảm"
+              >
+                <img src="./anhnen24.jpg" alt="Artwork 24" />
+                <div class="image-info">
+                  <span class="comic-title">Veil&Emma</span>
+                </div>
+              </a>
+            </div>
+          </i>
+        </div>
+        <div class="ranking-section">
+            <h3 class="section-title">BXH TRUYỆN HOT</h3>
+            <div id="rankingList" class="ranking-list"></div>
+        </div>
+      </main>
+      
+    </div>
+    
+    <div id="authModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" id="btnCloseModal">&times;</span>
+        <div id="loginForm">
+          <h2>Đăng Nhập</h2>
+          <input type="text" id="loginUser" placeholder="Tên đăng nhập" />
+          <input type="password" id="loginPass" placeholder="Mật khẩu" />
+          <button id="btnLoginAction">Đăng nhập</button>
+          <p>
+            Chưa có tài khoản? <a href="#" id="showRegister">Đăng ký ngay</a>
+          </p>
+        </div>
+        <div id="registerForm" style="display: none">
+          <h2>Đăng Ký</h2>
+          <input type="text" id="regUser" placeholder="Tên đăng nhập mới" />
+          <input type="password" id="regPass" placeholder="Mật khẩu" />
+          <button id="btnRegisterAction">Tạo tài khoản</button>
+          <p>Đã có tài khoản? <a href="#" id="showLogin">Đăng nhập</a></p>
+        </div>
+      </div>
+    </div>
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Ocean Wave</h3>
+          <p>Nơi chia sẻ đam mê tiểu thuyết và nghệ thuật số.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Liên kết nhanh</h4>
+          <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Truyện mới</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Liên hệ</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-discord"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+          <a href="https://bdi.edu.vn/"
+            >TRƯỜNG TRUNG CẤP CÔNG NGHIỆP BÌNH DƯƠNG</a
+          >
+        </div>
+        <div class="footer-section">
+          <h4>Địa chỉ</h4>
+          <div class="responsive-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.6358352656363!2d106.7770884!3d11.0284422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174da34c7159483%3A0x2b496501042687fe!2zVHLGsOG7nW5nIFRydW5nIEPhuqVwIEPDtG5n Nghi峄囈cCBCw6G5oIETGsMahbmc!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Ocean Wave Manga. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

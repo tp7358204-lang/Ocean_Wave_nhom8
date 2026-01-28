@@ -1,0 +1,499 @@
+/* --- 1. Reset & Cấu hình chung --- */
+* {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4; 
+}
+
+.wrapper {
+    display: flex; 
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 280px;
+    background-color: rgb(29, 53, 97);
+    color: white;
+    padding: 20px;
+    position: fixed; 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border-right: 2px solid rgba(255,255,255,0.1);
+    z-index: 1000;
+}
+
+.sidebar-header {
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+h1 {
+    font-family: cursive;
+    font-size: 32px;
+    margin-top: 5px;
+    color: #ffffff;
+}
+.tieude {
+    font-family:Libre Baskerville;
+    font-size: 40px;
+    margin-top:10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* --- 3. Điều hướng & Menu bung ra --- */
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Ô tìm kiếm */
+.search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.search-wrapper input {
+    width: 100%;
+    padding: 10px 35px 10px 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.search-wrapper i {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+}
+
+/* Nút bấm */
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(149, 180, 188);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Menu con (Submenu) */
+.menu-dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 100%; 
+    top: 0;
+    background-color: rgb(74, 101, 156);
+    min-width: 200px;
+    flex-direction: column;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    border-radius: 0 10px 10px 0;
+    list-style: none;
+}
+
+.submenu li a {
+    display: block;
+    padding: 12px 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.submenu li a:hover {
+    background-color: rgb(149, 180, 188);
+}
+
+.menu-dropdown:hover .submenu {
+    display: flex;
+}
+
+/* --- 4. Nội dung chính & Lưới hình ảnh --- */
+.content {
+    margin-left: 280px; 
+    flex: 1;
+    padding: 40px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 25px;
+    padding-top: 30px;
+}
+
+/* Từng ô hình ảnh */
+.image-item {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; 
+    color: inherit;
+}
+
+.image-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.image-info {
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(29, 53, 97);
+}
+
+/* --- 5. Nút Quay lại trang chủ (dành cho trang chi tiết) --- */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background-color: rgb(29, 53, 97);
+    color: white !important;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.back-btn:hover {
+    background-color: rgb(4, 25, 31);
+    transform: translateX(-5px);
+}
+
+/* --- 6. Hiệu ứng Hover chung (Nổi lên) --- */
+.hover-up {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.hover-up:hover {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+}
+
+.image-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}.image-item {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+/* --- Modal Background --- */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+}
+
+/* --- Modal Box --- */
+.modal-content {
+    background-color: rgb(0, 0, 0);
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 { margin-bottom: 20px; color: rgb(29, 53, 97); }
+
+.modal-content input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(29, 53, 97);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.close-modal {
+    position: absolute;
+    right: 15px; top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+}
+/* --- FOOTER STYLE --- */
+.main-footer {
+    background-color: #1a2a45;
+    color: #aaa2a2;
+    padding: 40px 0 20px 0;
+    margin-top: 50px;
+    
+    margin-left: 280px; 
+    width: calc(100% - 280px);
+    
+    transition: all 0.3s; 
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 0 30px;
+}
+
+@media (max-width: 768px) {
+    .main-footer {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+.footer-section h3, .footer-section h4 { color: #4facfe; margin-bottom: 20px; }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 10px; }
+.footer-section ul li a { color: #bdc3c7; text-decoration: none; }
+.social-icons { display: flex; gap: 15px; font-size: 1.5rem; margin-bottom: 15px; }
+.footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: #95a5a6; }
+.auth-alert {
+    background: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ffeeba;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-alert a {
+    font-weight: bold;
+    color: rgb(29, 53, 97);
+    text-decoration: underline;
+}
+.responsive-map {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.responsive-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 4px;
+}
+.member-nav button {
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.member-nav i {
+    font-size: 18px;
+    width: 20px;
+}
+.new-comics-section {
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.section-title {
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.slider-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 10px 5px;
+}
+
+.slider-item {
+    flex: 0 0 180px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.slider-item:hover {
+    transform: scale(1.05);
+}
+
+.slider-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.slider-info {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Nút bấm */
+.slider-btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(29, 53, 97, 0.8);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-btn.prev { left: -10px; }
+.slider-btn.next { right: -10px; }
+
+.slider-btn:hover { background: #1d3561; }
+/* --- Cấu trúc Slider Snap (Mỗi lần lướt 1 ảnh) --- */
+.slider-track {
+    display: flex;
+    gap: 0;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    scrollbar-width: none;
+}
+
+.slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-item {
+    flex: 0 0 100%; 
+    scroll-snap-align: center; 
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.slider-item img {
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+/* CSS cho Bảng xếp hạng để trông gọn gàng hơn */
+.ranking-section {
+    margin-top: 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: 0.3s;
+}
+
+.ranking-item:last-child { border-bottom: none; }
+
+.rank-number {
+    font-size: 20px;
+    font-weight: bold;
+    width: 40px;
+    color: #999;
+}
+
+.rank-thumb {
+    width: 45px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.rank-title {
+    font-weight: 600;
+    font-size: 15px;
+    display: block;
+}
+
+.rank-views {
+    font-size: 12px;
+    color: #666;
+}
