@@ -71,3 +71,17 @@
     padding: 10px 30px;
     background-color: rgb(128, 158, 217);
 }
+.main-footer {
+    background-color: #1a2a45;
+    color: #aaa2a2;
+    padding: 40px 0 20px 0;
+    margin-top: 50px;
+    
+    /* Thay đổi ở đây để tràn màn hình */
+    margin-left: 0 !important; 
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+}

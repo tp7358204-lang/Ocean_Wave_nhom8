@@ -98,7 +98,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
   renderComments();
+const btnPostComment = document.getElementById("btnPostComment");
+if (btnPostComment) {
+    btnPostComment.onclick = () => {
+        const commentInput = document.getElementById("commentInput");
+        const text = commentInput.value.trim();
+        const currentUser = localStorage.getItem("currentUser");
 
+        if (!text) return alert("Vui lòng nhập nội dung!");
+        if (!currentUser) return alert("Bạn cần đăng nhập để bình luận!");
+
+        // Lấy danh sách cũ dựa trên ID trang
+        let saved = JSON.parse(localStorage.getItem("comments_" + pageId)) || [];
+        
+        // Thêm nội dung mới
+        saved.push({
+            user: currentUser,
+            text: text,
+            time: new Date().toLocaleString("vi-VN")
+        });
+
+        // Lưu lại và vẽ lại giao diện
+        localStorage.setItem("comments_" + pageId, JSON.stringify(saved));
+        commentInput.value = "";
+        renderComments(); 
+    };
+}
   // --- 7. TÌM KIẾM ---
   const searchInput = document.getElementById("searchInput");
   if (searchInput) {
